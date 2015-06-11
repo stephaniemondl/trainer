@@ -11,15 +11,15 @@ def index
   end
 
   def show
-    @users = Users.find(params[:id])
+    @users = User.find current_user.id
   end
 
   def new
-    @users = Users.new
+    @users = User.new
   end
 
   def create
-    @users = Users.new
+    @users = User.new
     @users.name = params[:name]
     @users.age = params[:age]
     @users.weight = params[:weight]
@@ -33,11 +33,11 @@ def index
   end
 
   def edit
-    @users = Users.find(params[:id])
+    @users = User.find(params[:id])
   end
 
   def update
-    @users = Users.find(params[:id])
+    @users = User.find(params[:id])
 
     @users.name = params[:name]
     @users.age = params[:age]
@@ -52,7 +52,7 @@ def index
   end
 
   def destroy
-    @users = Users.find(params[:id])
+    @users = User.find(params[:id])
 
     @users.destroy
 

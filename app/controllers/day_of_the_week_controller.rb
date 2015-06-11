@@ -1,0 +1,3 @@
+class DayOfTheWeekController < ApplicationController
+
+end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-
+  devise_for :users
+  root 'welcome#index'
 
   # Routes for the List_of_exercise resource:
   # CREATE
@@ -19,8 +20,7 @@ Rails.application.routes.draw do
   get "/delete_list_of_exercise/:id", :controller => "list_of_exercises", :action => "destroy"
   #------------------------------
 
-  devise_for :users
-  root 'list_of_exercises#index'
+  get "/users/", :controller => "users", :action => "show"
 
   get "/users/new", :controller => "users", :action => "new"
   post "/create_users", :controller => "users", :action => "create"
@@ -35,6 +35,17 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_users/:id", :controller => "users", :action => "destroy"
+
+  get "/day_of_the_week/", :controller => "day_of_the_week", :action => "show"
+
+  get "/about/", :controller => "about", :action => "show"
+
+  CalendarExample::Application.routes.draw do
+  resource :calendar, only: [:show], controller: :calendar
+  devise_for :users
+  root to: "calendar#show"
+
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,53 +1,7 @@
-<!-- Responsive panel example-->
+<div class="page-header">
+  <h1>
+    <a href="/user" class="btn btn-lg btn-success"><i class="fa fa-user "></i></a>
+    Have a great workout, <%= @users.email %> !
+  </h1>
 
-<div class="row">
-  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">List Of Exercise #<%= @list_of_exercise.id %></h3>
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-12">
-            <dl class="dl-horizontal">
-              <dt>Exercise category</dt>
-              <dd><%= @list_of_exercise.exercise_category %></dd>
-
-              <dt>Of sets</dt>
-              <dd><%= @list_of_exercise._of_sets %></dd>
-
-              <dt>User</dt>
-              <dd><%= @list_of_exercise.user_id %></dd>
-
-              <dt>Reps</dt>
-              <dd><%= @list_of_exercise.reps %></dd>
-
-              <dt>Time in minutes</dt>
-              <dd><%= @list_of_exercise.time_in_minutes %></dd>
-
-              <dt>Day of week</dt>
-              <dd><%= @list_of_exercise.day_of_week %></dd>
-
-              <dt>Exercise name</dt>
-              <dd><%= @list_of_exercise.exercise_name %></dd>
-
-            </dl>
-            <div class="btn-group btn-group-justified">
-              <a href="/list_of_exercises" class="btn btn-primary">
-                <i class="fa fa-chevron-left"></i>
-              </a>
-
-              <a href="/list_of_exercises/<%= @list_of_exercise.id %>/edit" class="btn btn-warning">
-                <i class="fa fa-edit"></i>
-              </a>
-
-              <a href="/delete_list_of_exercise/<%= @list_of_exercise.id %>" class="btn btn-danger" rel="nofollow">
-                <i class="fa fa-trash-o"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>

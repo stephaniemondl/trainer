@@ -5,30 +5,25 @@
   </h1>
 </div>
 
-<!-- Responsive, Isotope-based layout example -->
-
-<div class="row">
-  <div class="col-xs-12">
-    <input type="text" id="quicksearch" placeholder="Search List of exercises (start typing)" class="form-control">
-  </div>
-</div>
-
-<hr>
 
 <div class="row isotope-container">
 <% @list_of_exercises.each do |list_of_exercise| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">List Of Exercise #<%= list_of_exercise.id %></h3>
+        <h3 class="panel-title"><%= list_of_exercise.exercise_name %></h3>
       </div>
       <div class="panel-body">
         <dl>
+
+          <dt>Exercise ID</dt>
+          <dd><%= list_of_exercise.id %></dd>
+
           <dt>Exercise category</dt>
           <dd><%= list_of_exercise.exercise_category %></dd>
 
-          <dt>sets</dt>
-          <dd><%= list_of_exercise.sets %></dd>
+          <dt>Sets</dt>
+          <dd><%= list_of_exercise._of_sets %></dd>
 
           <dt>User</dt>
           <dd><%= list_of_exercise.user_id %></dd>
@@ -41,9 +36,6 @@
 
           <dt>Day of week</dt>
           <dd><%= list_of_exercise.day_of_week %></dd>
-
-          <dt>Exercise name</dt>
-          <dd><%= list_of_exercise.exercise_name %></dd>
 
         </dl>
         <div class="btn-group btn-group-justified">

@@ -3,9 +3,6 @@ class ListOfExercisesController < ApplicationController
     @list_of_exercises = ListOfExercise.all
   end
 
-  def set
-  end
-
   def user
   end
 
@@ -20,7 +17,7 @@ class ListOfExercisesController < ApplicationController
   def create
     @list_of_exercise = ListOfExercise.new
     @list_of_exercise.exercise_category = params[:exercise_category]
-    @list_of_exercise.sets = params[:sets]
+    @list_of_exercise._of_sets = params[:_of_sets]
     @list_of_exercise.user_id = params[:user_id]
     @list_of_exercise.reps = params[:reps]
     @list_of_exercise.time_in_minutes = params[:time_in_minutes]
@@ -42,7 +39,7 @@ class ListOfExercisesController < ApplicationController
     @list_of_exercise = ListOfExercise.find(params[:id])
 
     @list_of_exercise.exercise_category = params[:exercise_category]
-    @list_of_exercise.sets = params[:sets]
+    @list_of_exercise._of_sets = params[:_of_sets]
     @list_of_exercise.user_id = params[:user_id]
     @list_of_exercise.reps = params[:reps]
     @list_of_exercise.time_in_minutes = params[:time_in_minutes]

@@ -1,10 +1,10 @@
 <!-- Responsive panel example-->
 
 <div class="row">
-  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">List Of Exercise #<%= @list_of_exercise.id %></h3>
+        <h3 class="panel-title"> Exercise name<%= @list_of_exercise.exercise_name %></h3>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -13,8 +13,8 @@
               <dt>Exercise category</dt>
               <dd><%= @list_of_exercise.exercise_category %></dd>
 
-              <dt>Of sets</dt>
-              <dd><%= @list_of_exercise.number_of_sets %></dd>
+              <dt># of sets</dt>
+              <dd><%= @list_of_exercise._of_sets %></dd>
 
               <dt>User</dt>
               <dd><%= @list_of_exercise.user_id %></dd>
